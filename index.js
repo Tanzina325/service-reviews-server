@@ -43,6 +43,17 @@ app.get('/services/:id',async(req,res)=>{
   
 })
 
+
+app.post('/services', async(req,res)=>{
+  const addService = req.body;
+  console.log(req.body)
+  const result = await serviceCollection.insertOne(addService);
+  res.send(result);
+  
+  
+})
+
+
 }
 finally{
 
